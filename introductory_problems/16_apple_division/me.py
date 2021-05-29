@@ -13,11 +13,14 @@
 
 #     print(d)
 # apple_division(n, arr)
+
 def apple_division_recursion(n, arr):
     ans = float('inf')
     def dfs(a, b):
-        if a == n:
+        nonlocal ans
+        if a >= n:
             ans = min(ans, abs(b))
+            return
         dfs(a+1, b+arr[a])
         dfs(a+1, b-arr[a])
         
