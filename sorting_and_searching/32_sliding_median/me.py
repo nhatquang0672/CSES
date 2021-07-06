@@ -9,10 +9,8 @@ def sliding_median(n, x, arr):
     ans = []
     med = (x+1)//2
     m = 0
-    for idx, val in enumerate(arr):
 
-        while minr and minr[0][1] <= idx-x: heappop(minr)
-        while maxl and -maxl[0][1] <= idx-x: heappop(maxl)
+    for idx, val in enumerate(arr):
         
         if m < med:
             heappush(minr, (val, idx))
@@ -33,7 +31,6 @@ def sliding_median(n, x, arr):
         ans.append(-maxl[0][0])        
         if arr[idx-x+1] <= -maxl[0][0]:
             m -= 1
-
 
     print(' '.join(str(x) for x in ans))
 
